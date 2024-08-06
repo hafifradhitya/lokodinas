@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class Halaman extends Controller
 {
     //
-    public function tampil() {
+    public function tampilHalaman() {
         $pages = halamanstatis::all();
         return view("administrator.menu-utama.halamanbaru", compact(['pages']));
     }
