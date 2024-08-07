@@ -6,7 +6,7 @@
                     Showing {{ $paginator->firstItem() }} to {{ $paginator->lastItem() }} of {{ $paginator->total() }} entries
                 </div>
             </div>
-            <ul class="pagination mb-0">
+            <ul class="pagination mb-0 mr-5">
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true">

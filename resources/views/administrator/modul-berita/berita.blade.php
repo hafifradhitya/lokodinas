@@ -16,7 +16,7 @@
             </p> --}}
           </div>
           <div class="table-responsive py-4">
-            <table class="table table-flush" id="datatable-basic">
+            <table class="table table-bordered" id="datatable-basic">
               <thead class="thead-light">
                 <tr>
                   <th>Judul Berita</th>
@@ -42,6 +42,7 @@
                 @endforeach
               </tbody>
             </table>
+            <br>
             {{ $news->links('vendor.pagination.bootstrap-4') }}
           </div>
         </div>
