@@ -14,21 +14,25 @@
         <table class="table table-flush" id="datatable-basic">
             <thead class="thead-light">
                 <tr>
-                    <th>No</th>
-                    <th>Judul</th>
-                    <th>Deskripsi</th>
-                    <th>Tgl Posting</th>
-                    <th>#</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">Judul</th>
+                    <th class="text-center">Deskripsi</th>
+                    <th class="text-center">Tgl Posting</th>
+                    <th class="text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
+                <? $no++; ?>
+                <? $no = 1; ?>
+                @foreach ($banes as $bane)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>Tiger Nixon</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $bane->judul }}</td>
+                    <td>{{ $bane->deskripsi }}</td>
+                    <td>{{ \Carbon\Carbon::parse($bane->tgl_posting)->format('d M Y') }}</td>
                     <td>--</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

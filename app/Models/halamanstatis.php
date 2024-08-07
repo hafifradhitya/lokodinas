@@ -10,5 +10,5 @@ class halamanstatis extends Model
     use HasFactory;
 
     protected $table = 'halamanstatis';
-    protected $fillable = ['judul', 'judul_seo', 'tgl_posting']; // Kolom yang dapat diisi
+    protected $fillable = ['judul', 'isi_halaman', 'tgl_posting']; // Kolom yang dapat diisi
 }
