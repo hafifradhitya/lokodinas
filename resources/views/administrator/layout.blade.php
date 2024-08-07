@@ -18,7 +18,7 @@
           <!-- Brand -->
           <div class="sidenav-header d-flex align-items-center">
             <a class="navbar-brand" href="{{ url('administrator/dashboard')}}">
-              <img src="{{ url('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+              Administrator
             </a>
             <div class="ml-auto">
               <!-- Sidenav toggler -->
