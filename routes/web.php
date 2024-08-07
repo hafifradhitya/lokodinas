@@ -20,10 +20,10 @@ Route::get('administrator/menu-utama/menuwebsite', [AppController::class, "menuw
 Route::get("administrator/menu-utama/menuwebsite", [MainController::class,"tampilMenuWebsite"]);
 
 Route::get('administrator/menu-utama/halamanbaru', [AppController::class, "halamanbaru"]);
-Route::get("administrator/menu-utama/halamanbaru", [HalamanController::class,"tampilHalaman"]);
+Route::get("administrator/menu-utama/halamanbaru", [MainController::class,"tampilHalaman"]);
 
 Route::get('administrator/menu-utama/identitaswebsite', [AppController::class, "identitaswebsite"]);
-Route::get('administrator/menu-utama/identitaswebsite', [HalamanController::class, "show"]);
+Route::get('administrator/menu-utama/identitaswebsite', [MainController::class, "tampilIdentitas"]);
 
 Route::get('administrator/modul-banner/bannerhome', [AppController::class, "bannerhome"]);
 
