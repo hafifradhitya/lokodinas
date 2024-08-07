@@ -11,7 +11,7 @@
         </p> --}}
     </div>
     <div class="table-responsive py-4">
-        <table class="table table-flush" id="datatable-basic">
+        <table class="table table-bordered" id="datatable-basic">
             <thead class="thead-light">
                 <tr>
                     <th>No</th>
@@ -22,14 +22,23 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $no = 1;
+                @endphp
+                @foreach ($video as $video)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $video->jdl_video }}</td>
+                    <td>{{ $video->tanggal }}</td>
+                    <td>{{ $video->playlist }}</td>
                     <td>--</td>
                 </tr>
+                @php
+                    $no++;
+                @endphp
+                @endforeach
             </tbody>
+            {{ $playlist->links('vendor.pagination.bootstrap-4') }}
         </table>
     </div>
 </div>

@@ -11,7 +11,7 @@
         </p> --}}
     </div>
     <div class="table-responsive py-4">
-        <table class="table table-flush" id="datatable-basic">
+        <table class="table table-bordered" id="datatable-basic">
             <thead class="thead-light">
                 <tr>
                     <th>No</th>
@@ -22,14 +22,30 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $no = 1
+                @endphp
+                @foreach ($playlists as $playlist)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>System Architect</td>
+                    <td>{{ $no }}</td>
+                    <td>
+                        <?php
+                            if ($playlist->gbr_playlist != NULL) {
+                            $gbr_playlist = $playlist->gbr_playlist;
+                            }
+                        ?>
+                        <img style='width:80px;' src="{{ url('img_playlist/'.$playlist->gbr_playlist )}}">
+                    </td>
+                    <td>{{ $playlist->jdl_playlist }}</td>
+                    <td>{{ $playlist->aktif }}</td>
+                    <td>--</td>
                 </tr>
+                @php
+                    $no++;
+                @endphp
+                @endforeach
             </tbody>
+            {{ $playlists->links('vendor.pagination.bootstrap-4') }}
         </table>
     </div>
 </div>

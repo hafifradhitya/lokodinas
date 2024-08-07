@@ -23,14 +23,22 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $no = 1;
+                @endphp
+                @foreach ($category as $category)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>System Architect</td>
-                    <td>Tiger Nixon</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $category->nama_kategori }}</td>
+                    <td>-- LINK --</td>
+                    <td>{{ $category->sidebar }}</td>
+                    <td>{{ $category->aktif }}</td>
+                    <td>--</td>
                 </tr>
+                @php
+                    $no++;
+                @endphp
+                @endforeach
             </tbody>
         </table>
     </div>
