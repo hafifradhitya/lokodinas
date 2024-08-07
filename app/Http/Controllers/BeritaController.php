@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BeritaModel;
 use Illuminate\Http\Request;
 
-class Berita extends Controller
+class BeritaController extends Controller
 {
     //
     public function tampilBerita() {

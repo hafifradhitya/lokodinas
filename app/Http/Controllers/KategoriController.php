@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 
-class Kategori extends Controller
+class KategoriController extends Controller
 {
     //
     public function tampilKategoriBerita(){

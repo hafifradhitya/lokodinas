@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\AppController;
-use App\Http\Controllers\Berita;
-use App\Http\Controllers\Halaman;
-use App\Http\Controllers\Kategori;
-use App\Http\Controllers\Main;
-use App\Http\Controllers\Playlist;
-use App\Http\Controllers\Video;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\HalamanController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\PlaylistController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,23 +17,26 @@ Route::get('/', function () {
 Route::get('administrator/dashboard', [AppController::class, "dashboard"]);
 
 Route::get('administrator/menu-utama/menuwebsite', [AppController::class, "menuwebsite"]);
-Route::get("administrator/menu-utama/menuwebsite", [Main::class,"tampilMenuWebsite"]);
+Route::get("administrator/menu-utama/menuwebsite", [MainController::class,"tampilMenuWebsite"]);
 
 Route::get('administrator/menu-utama/halamanbaru', [AppController::class, "halamanbaru"]);
-Route::get("administrator/menu-utama/halamanbaru", [Halaman::class,"tampilHalaman"]);
+Route::get("administrator/menu-utama/halamanbaru", [HalamanController::class,"tampilHalaman"]);
 
 Route::get('administrator/menu-utama/identitaswebsite', [AppController::class, "identitaswebsite"]);
-Route::get('administrator/menu-utama/identitaswebsite', [Halaman::class, "show"]);
+Route::get('administrator/menu-utama/identitaswebsite', [HalamanController::class, "show"]);
 
 Route::get('administrator/modul-banner/bannerhome', [AppController::class, "bannerhome"]);
+
 Route::get('administrator/modul-banner/bannerslider', [AppController::class, "bannerslider"]);
+Route::get("administrator/modul-banner/bannerslider", [BannerController::class,"bannershow"]);
+
 Route::get('administrator/modul-banner/iklansidebar', [AppController::class, "iklansidebar"]);
 
 Route::get('administrator/modul-berita/berita', [AppController::class, "berita"]);
-Route::get("administrator/modul-berita/berita", [Berita::class,"tampilBerita"]);
+Route::get("administrator/modul-berita/berita", [BeritaController::class,"tampilBerita"]);
 
 Route::get('administrator/modul-berita/kategoriberita', [AppController::class, "kategoriberita"]);
-Route::get("administrator/modul-berita/kategoriberita", [Kategori::class,"tampilKategoriBerita"]);
+Route::get("administrator/modul-berita/kategoriberita", [KategoriController::class,"tampilKategoriBerita"]);
 
 Route::get('administrator/modul-berita/tagberita', [AppController::class, "tagberita"]);
 
@@ -47,12 +51,12 @@ Route::get('administrator/modul-users/manajemenuser', [AppController::class, "ma
 Route::get('administrator/modul-users/manajemenmodul', [AppController::class, "manajemenmodul"]);
 
 Route::get('administrator/modul-video/playlistvideo', [AppController::class, "playlistvideo"]);
-Route::get("administrator/modul-video/playlistvideo", [Playlist::class,"tampilPlaylist"]);
+Route::get("administrator/modul-video/playlistvideo", [PlaylistController::class,"tampilPlaylist"]);
 
 Route::get('administrator/modul-video/tagtvideo', [AppController::class, "tagvideo"]);
 
 Route::get('administrator/modul-video/video', [AppController::class, "video"]);
-Route::get("administrator/modul-video/video", [Video::class,"tampilVideo"]);
+Route::get("administrator/modul-video/video", [VideoController::class,"tampilVideo"]);
 
 Route::get('administrator/modul-web/backgroundwebsite', [AppController::class, "backgroundwebsite"]);
 Route::get('administrator/modul-web/logowebsite', [AppController::class, "logowebsite"]);

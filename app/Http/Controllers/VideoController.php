@@ -6,10 +6,9 @@ use App\Models\PlaylistModel;
 use App\Models\VideoModel;
 use Illuminate\Http\Request;
 
-class Video extends Controller
+class VideoController extends Controller
 {
     //
-
     public function tampilVideo(Request $request){
         $playlist = PlaylistModel::paginate(10);
         // $video = VideoModel::paginate(10);

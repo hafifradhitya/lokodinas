@@ -1,7 +1,12 @@
 @extends('administrator.dashboard')
 
 @section('content')
-
+<style>
+    .table td {
+        word-wrap: break-word;
+        white-space: normal;
+    }
+</style>
 <div class="card">
     <!-- Card header -->
     <div class="card-header">
@@ -22,8 +27,9 @@
                 </tr>
             </thead>
             <tbody>
-                <? $no++; ?>
-                <? $no = 1; ?>
+                @php
+                    $no = 1
+                @endphp
                 @foreach ($banes as $bane)
                 <tr>
                     <td>{{ $no }}</td>
@@ -32,6 +38,9 @@
                     <td>{{ \Carbon\Carbon::parse($bane->tgl_posting)->format('d M Y') }}</td>
                     <td>--</td>
                 </tr>
+                @php
+                    $no++;
+                @endphp
                 @endforeach
             </tbody>
         </table>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MenuWebsiteModel;
 use Illuminate\Http\Request;
 
-class Main extends Controller
+class MainController extends Controller
 {
     //
     public function tampilMenuWebsite(){

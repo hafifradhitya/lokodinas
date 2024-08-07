@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Controllers\Playlist;
+use App\Http\Controllers\PlaylistController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +15,6 @@ class VideoModel extends Model
     protected $fillable = ['jdl-video', 'tanggal'];
 
     public function playlist(){
-        return $this->belongsTo(Playlist::class,"id_playlist","id");
+        return $this->belongsTo(PlaylistController::class,"id_playlist","id");
     }
 }
