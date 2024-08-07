@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     //
     public function tampilHalaman() {
-        $pages = HalamanstatisModel::all();
+        $pages = HalamanstatisModel::paginate(3);
         return view("administrator.menu-utama.halamanbaru", compact(['pages']));
     }
 
