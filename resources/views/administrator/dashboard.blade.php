@@ -38,7 +38,7 @@
 </div>
 <div class="card-deck flex-column flex-xl-row">
 
-    <div class="container mt-5">
+    {{-- <div class="container mt-5">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Application Buttons</h3>
@@ -75,8 +75,82 @@
                 <a href="#" class="btn btn-primary btn-app"><i class="fa fa-users"></i> Users</a>
             </div>
         </div>
+    </div> --}}
+
+    <div class="container mt-5">
+        <h3 class="card-title">Panel Kontrol</h3>
+        <p>Silakan pilih menu di bawah ini untuk mengelola konten website:</p>
+        <div class="row">
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-th fa-2x mb-1"></i>
+                        <span class="small">Identitas</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-th-large fa-2x mb-1"></i>
+                        <span class="small">Menu</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-file fa-2x mb-1"></i>
+                        <span class="small">Halaman</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-desktop fa-2x mb-1"></i>
+                        <span class="small">Berita</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-bars fa-2x mb-1"></i>
+                        <span class="small">Kategori</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-tag fa-2x mb-1"></i>
+                        <span class="small">Tag Berita</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-comments fa-2x mb-1"></i>
+                        <span class="small">Komentar</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 mb-3">
+                <div class="card h-100">
+                    <a href="#" class="btn btn-app d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                        <i class="fa fa-bell-slash fa-2x mb-1"></i>
+                        <span class="small">Sensor</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- <div class="card">
+
+    <div class="card">
         <div class="card-header">
             <div class="row align-items-center">
                 <div class="col-8">
@@ -172,7 +246,7 @@
                 </li>
             </ul>
         </div>
-    </div> -->
+    </div>
 </div>
 <div class="row">
     <div class="col-xl-8">
