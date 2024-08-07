@@ -6,29 +6,43 @@
     <!-- Card header -->
     <div class="card-header">
         <h3 class="mb-0">Tag Berita</h3>
-        {{-- <p class="text-sm mb-0">
-            This is an exmaple of datatable using the well known datatables.net plugin. This is a minimal setup in order to get started fast.
-        </p> --}}
     </div>
     <div class="table-responsive py-4">
-        <table class="table table-flush" id="datatable-basic">
+        <table class="table table-bordered" id="datatable-basic">
             <thead class="thead-light">
                 <tr>
-                    <th>No</th>
-                    <th>Tag Berita</th>
-                    <th>Link</th>
-                    <th>#</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">Tag Berita</th>
+                    <th class="text-center">Link</th>
+                    <th class="text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
+                @php
+                $no=1;
+                @endphp
+                @foreach ($rows as $row)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $row->nama_tag }}</td>
+                    <td><a href="{{ $row->tag_seo}}">{{ $row->tag_seo }}</a></td>
+                    <td class="text-center">
+                        <a href="{{ url('data/'.$row->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                            Edit
+                        </a>
+                        <a href="{{ url('data/'.$row->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $row-> name }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                            Hapus
+                        </a>
+                    </td>
                 </tr>
+                @php
+                $no++;
+                @endphp
+                @endforeach
             </tbody>
         </table>
+        <br>
+        {{ $rows->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
 

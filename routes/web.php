@@ -41,6 +41,7 @@ Route::get('administrator/modul-berita/kategoriberita', [AppController::class, "
 Route::get("administrator/modul-berita/kategoriberita", [KategoriController::class,"tampilKategoriBerita"]);
 
 Route::get('administrator/modul-berita/tagberita', [AppController::class, "tagberita"]);
+Route::get('administrator/modul-berita/tagberita', [beritaController::class, "tagberita"]);
 
 Route::get('administrator/modul-interaksi/agenda', [AppController::class, "agenda"]);
 Route::get('administrator/modul-interaksi/alamatkontak', [AppController::class, "alamatkontak"]);
