@@ -19,6 +19,7 @@
             <table class="table table-bordered" id="datatable-basic">
               <thead class="thead-light">
                 <tr>
+                  <th>No</th>
                   <th>Judul Berita</th>
                   <th>Tanggal</th>
                   <th>Status</th>
@@ -31,10 +32,18 @@
                 @endphp
                 @foreach ($news as $new)
                     <tr>
+                        <td>{{ $no }}</td>
                         <td>{{ $new->judul }}</td>
                         <td>{{ $new->tanggal }}</td>
                         <td>{{ $new->status }}</td>
-                        <td>-</td>
+                        <td>
+                            <a href="{{ url('data/'.$new->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                              Edit
+                            </a>
+                            <a href="{{ url('data/'.$new->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $new-> name }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                              Hapus
+                            </a>
+                        </td>
                     </tr>
                 @php
                     $no++;

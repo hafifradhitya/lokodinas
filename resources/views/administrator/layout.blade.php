@@ -94,7 +94,7 @@
                         <a href="{{url('administrator/modul-video/video')}}" class="nav-link">Video</a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{url('administrator/modul-video/tagtvideo')}}" class="nav-link">Tag Video</a>
+                        <a href="{{url('administrator/modul-video/tagvideo')}}" class="nav-link">Tag Video</a>
                       </li>
                     </ul>
                   </div>

@@ -31,7 +31,14 @@
                     <td>{{ $video->jdl_video }}</td>
                     <td>{{ $video->tanggal }}</td>
                     <td>{{ $video->playlist }}</td>
-                    <td>--</td>
+                    <td>
+                        <a href="{{ url('data/'.$video->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                          Edit
+                        </a>
+                        <a href="{{ url('data/'.$video->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $video-> name }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                          Hapus
+                        </a>
+                    </td>
                 </tr>
                 @php
                     $no++;

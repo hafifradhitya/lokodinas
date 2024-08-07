@@ -26,14 +26,21 @@
                 @php
                     $no = 1;
                 @endphp
-                @foreach ($category as $category)
+                @foreach ($categories as $category)
                 <tr>
                     <td>{{ $no }}</td>
                     <td>{{ $category->nama_kategori }}</td>
                     <td>-- LINK --</td>
                     <td>{{ $category->sidebar }}</td>
                     <td>{{ $category->aktif }}</td>
-                    <td>--</td>
+                    <td>
+                        <a href="{{ url('data/'.$category->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                          Edit
+                        </a>
+                        <a href="{{ url('data/'.$category->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $category-> name }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                          Hapus
+                        </a>
+                      </td>
                 </tr>
                 @php
                     $no++;
@@ -41,6 +48,8 @@
                 @endforeach
             </tbody>
         </table>
+        <br>
+        {{ $categories->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
 @endsection
