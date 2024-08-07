@@ -2,7 +2,7 @@
     <nav>
         <div class="d-flex justify-content-between align-items-center">
             <div class="ml-3">
-                <div class="dataTables_info">
+                <div class="dataTables_info small">
                     Showing {{ $paginator->firstItem() }} to {{ $paginator->lastItem() }} of {{ $paginator->total() }} entries
                 </div>
             </div>

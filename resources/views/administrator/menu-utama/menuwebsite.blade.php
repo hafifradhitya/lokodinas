@@ -6,60 +6,46 @@
     <!-- Card header -->
     <div class="card-header">
       <h3 class="mb-0">Datatable</h3>
-      <p class="text-sm mb-0">
+      {{-- <p class="text-sm mb-0">
         This is an exmaple of datatable using the well known datatables.net plugin. This is a minimal setup in order to get started fast.
-      </p>
+      </p> --}}
     </div>
     <div class="table-responsive py-4">
       <table class="table table-flush" id="datatable-basic">
         <thead class="thead-light">
           <tr>
-            <th>Name</th>
+            <th>No</th>
+            <th>Menu</th>
+            <th>Level Menu</th>
+            <th>Link</th>
+            <th>Aktif</th>
             <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>Urutan</th>
+            <th>#</th>
           </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-          </tr>
-        </tfoot>
         <tbody>
+        @php
+            $no = 1;
+        @endphp
+        @foreach ($menuwebs as $menuweb)
           <tr>
-            <td>Thor Walton</td>
-            <td>Developer</td>
-            <td>New York</td>
-            <td>61</td>
-            <td>2013/08/11</td>
-            <td>$98,540</td>
+            <td>{{ $no }}</td>
+            <td>--</td>
+            <td>{{ $menuweb->id_menu }}</td>
+            <td>{{ $menuweb->link }}</td>
+            <td>{{ $menuweb->aktif }}</td>
+            <td>{{ $menuweb->position }}</td>
+            <td>{{ $menuweb->urutan }}</td>
+            <td>--</td>
           </tr>
-          <tr>
-            <td>Finn Camacho</td>
-            <td>Support Engineer</td>
-            <td>San Francisco</td>
-            <td>47</td>
-            <td>2009/07/07</td>
-            <td>$87,500</td>
-          </tr>
-          <tr>
-            <td>Serge Baldwin</td>
-            <td>Data Coordinator</td>
-            <td>Singapore</td>
-            <td>64</td>
-            <td>2012/04/09</td>
-            <td>$138,575</td>
-          </tr>
+        @php
+          $no++;
+        @endphp
+        @endforeach
         </tbody>
       </table>
-      {{-- {{ $webs->links('vendor.pagination.bootstrap-4') }} --}}
+      {{ $menuwebs->links('vendor.pagination.bootstrap-4') }}
     </div>
   </div>
 @endsection

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Berita;
 use App\Http\Controllers\Halaman;
+use App\Http\Controllers\Main;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,11 +13,10 @@ Route::get('/', function () {
 Route::get('administrator/dashboard', [AppController::class, "dashboard"]);
 
 Route::get('administrator/menu-utama/menuwebsite', [AppController::class, "menuwebsite"]);
+Route::get("administrator/menu-utama/menuwebsite", [Main::class,"tampilMenuWebsite"]);
 
 Route::get('administrator/menu-utama/halamanbaru', [AppController::class, "halamanbaru"]);
 Route::get("administrator/menu-utama/halamanbaru", [Halaman::class,"tampilHalaman"]);
-
-Route::get("administrator/menu-utama/halamanbaru", [Halaman::class,"tampil"]);
 
 Route::get('administrator/menu-utama/identitaswebsite', [AppController::class, "identitaswebsite"]);
 Route::get('administrator/menu-utama/identitaswebsite', [Halaman::class, "show"]);
