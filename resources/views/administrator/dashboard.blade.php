@@ -38,31 +38,49 @@
 </div>
 <div class="card-deck flex-column flex-xl-row">
 
-    <div class="card">
-        <div class="card-header bg-transparent">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                    <h2 class="h3 mb-0">Total orders</h2>
-                </div>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Application Buttons</h3>
             </div>
-        </div>
-        <div class="card-body">
-            <!-- Chart -->
-            <div class="chart">
-                <canvas id="chart-bars" class="chart-canvas"></canvas>
+            <div class="card-body">
+                <p>Silahkan klik menu pilihan yang berada di sebelah kiri untuk mengelola konten website anda atau pilih ikon-ikon pada Control Panel di bawah ini:</p>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-th"></i> Identitas</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-th-large"></i> Menu</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-file-text"></i> Halaman</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-television"></i> Berita</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-bars"></i> Kategori</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-tag"></i> Tag Berita</a>
+                <a href="#" class="btn btn-primary btn-app"><span class="badge bg-success"></span><i class="fa fa-comments"></i> Komen. Berita</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-bell-slash"></i> Sensor</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-camera-retro"></i> Album</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-camera"></i> Gallery</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-caret-square-o-right"></i> Playlist</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-play"></i> Video</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-tags"></i> Tag Video</a>
+                <a href="#" class="btn btn-primary btn-app"><span class="badge bg-info"></span><i class="fa fa-comments-o"></i> Komen. Video</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-file-image-o"></i> Ads Atas</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-file-image-o"></i> Ads Sidebar</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-file-image-o"></i> Ads Tengah</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-circle-thin"></i> Logo</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-file"></i> Template</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-circle"></i> Background</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-calendar-minus-o"></i> Agenda</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-calendar-minus-o"></i> Sekilas Info</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-bar-chart-o"></i> Polling</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-yahoo"></i> YM</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-download"></i> Download</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-bed"></i> Alamat</a>
+                <a href="#" class="btn btn-primary btn-app"><span class="badge bg-warning"></span><i class="fa fa-envelope"></i> Pesan</a>
+                <a href="#" class="btn btn-primary btn-app"><i class="fa fa-users"></i> Users</a>
             </div>
         </div>
     </div>
-    <!-- Progress track -->
-    <div class="card">
-        <!-- Card header -->
+    <!-- <div class="card">
         <div class="card-header">
             <div class="row align-items-center">
                 <div class="col-8">
-                    <!-- Surtitle -->
                     <h6 class="surtitle">5/23 projects</h6>
-                    <!-- Title -->
                     <h5 class="h3 mb-0">Progress track</h5>
                 </div>
                 <div class="col-4 text-right">
@@ -70,14 +88,11 @@
                 </div>
             </div>
         </div>
-        <!-- Card body -->
         <div class="card-body">
-            <!-- List group -->
             <ul class="list-group list-group-flush list my--3">
                 <li class="list-group-item px-0">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <!-- Avatar -->
                             <a href="#" class="avatar rounded-circle">
                                 <img alt="Image placeholder" src="../../assets/img/theme/bootstrap.jpg">
                             </a>
@@ -94,7 +109,6 @@
                 <li class="list-group-item px-0">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <!-- Avatar -->
                             <a href="#" class="avatar rounded-circle">
                                 <img alt="Image placeholder" src="../../assets/img/theme/angular.jpg">
                             </a>
@@ -111,7 +125,6 @@
                 <li class="list-group-item px-0">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <!-- Avatar -->
                             <a href="#" class="avatar rounded-circle">
                                 <img alt="Image placeholder" src="../../assets/img/theme/sketch.jpg">
                             </a>
@@ -128,7 +141,6 @@
                 <li class="list-group-item px-0">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <!-- Avatar -->
                             <a href="#" class="avatar rounded-circle">
                                 <img alt="Image placeholder" src="../../assets/img/theme/react.jpg">
                             </a>
@@ -145,7 +157,6 @@
                 <li class="list-group-item px-0">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <!-- Avatar -->
                             <a href="#" class="avatar rounded-circle">
                                 <img alt="Image placeholder" src="../../assets/img/theme/vue.jpg">
                             </a>
@@ -161,12 +172,12 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="row">
     <div class="col-xl-8">
 
     </div>
-<div class="col-xl-4">
+    <div class="col-xl-4">
 
-@endsection
+        @endsection
