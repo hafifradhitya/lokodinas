@@ -5,7 +5,7 @@
 <div class="card">
     <!-- Card header -->
     <div class="card-header">
-      <h3 class="mb-0">Datatable</h3>
+      <h3 class="mb-0">Menu Website</h3>
       {{-- <p class="text-sm mb-0">
         This is an exmaple of datatable using the well known datatables.net plugin. This is a minimal setup in order to get started fast.
       </p> --}}
@@ -31,8 +31,7 @@
         @foreach ($menuwebs as $menuweb)
           <tr>
             <td>{{ $no }}</td>
-            <td>--</td>
-            <td>{{ $menuweb->id_menu }}</td>
+            <td>{{ $menuweb->nama_menu }}</td>
             <td>{{ $menuweb->link }}</td>
             <td>{{ $menuweb->aktif }}</td>
             <td>{{ $menuweb->position }}</td>

@@ -26,11 +26,13 @@ Route::get('administrator/menu-utama/identitaswebsite', [AppController::class, "
 Route::get('administrator/menu-utama/identitaswebsite', [MainController::class, "tampilIdentitas"]);
 
 Route::get('administrator/modul-banner/bannerhome', [AppController::class, "bannerhome"]);
+Route::get('administrator/modul-banner/bannerhome', [BannerController::class, "tampilBannerhome"]);
 
 Route::get('administrator/modul-banner/bannerslider', [AppController::class, "bannerslider"]);
 Route::get("administrator/modul-banner/bannerslider", [BannerController::class,"bannershow"]);
 
 Route::get('administrator/modul-banner/iklansidebar', [AppController::class, "iklansidebar"]);
+Route::get("administrator/modul-banner/iklansidebar", [BannerController::class,"tampilIklansidebar"]);
 
 Route::get('administrator/modul-berita/berita', [AppController::class, "berita"]);
 Route::get("administrator/modul-berita/berita", [BeritaController::class,"tampilBerita"]);
