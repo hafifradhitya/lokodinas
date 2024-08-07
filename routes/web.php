@@ -53,7 +53,8 @@ Route::get('administrator/modul-users/manajemenmodul', [AppController::class, "m
 Route::get('administrator/modul-video/playlistvideo', [AppController::class, "playlistvideo"]);
 Route::get("administrator/modul-video/playlistvideo", [PlaylistController::class,"tampilPlaylist"]);
 
-Route::get('administrator/modul-video/tagtvideo', [AppController::class, "tagvideo"]);
+Route::get('administrator/modul-video/tagvideo', [AppController::class, "tagvideo"]);
+Route::get("administrator/modul-video/tagvideo", [VideoController::class,"tampilTagVideo"]);
 
 Route::get('administrator/modul-video/video', [AppController::class, "video"]);
 Route::get("administrator/modul-video/video", [VideoController::class,"tampilVideo"]);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PlaylistModel;
+use App\Models\TagVideoModel;
 use App\Models\VideoModel;
 use Illuminate\Http\Request;
 
@@ -32,5 +33,10 @@ class VideoController extends Controller
         // }
 
         // $books = $data->get();
+    }
+
+    public function tampilTagvideo(){
+        $tagvideos = TagVideoModel::paginate(10);
+        return view('administrator.modul-video.tagvideo', compact(['tagvideos']));
     }
 }

@@ -38,7 +38,14 @@
                     </td>
                     <td>{{ $playlist->jdl_playlist }}</td>
                     <td>{{ $playlist->aktif }}</td>
-                    <td>--</td>
+                    <td>
+                        <a href="{{ url('data/'.$playlist->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                          Edit
+                        </a>
+                        <a href="{{ url('data/'.$playlist->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $playlist-> name }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                          Hapus
+                        </a>
+                    </td>
                 </tr>
                 @php
                     $no++;

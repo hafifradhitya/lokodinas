@@ -21,14 +21,31 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $no = 1;
+                @endphp
+                @foreach ($tagvideos as $tagvideo)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>--</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $tagvideo->nama_tag }}</td>
+                    <td>-- LINK --</td>
+                    <td>
+                        <a href="{{ url('data/'.$tagvideo->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                          Edit
+                        </a>
+                        <a href="{{ url('data/'.$tagvideo->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $tagvideo-> name }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                          Hapus
+                        </a>
+                    </td>
                 </tr>
+                @php
+                    $no++;
+                @endphp
+                @endforeach
             </tbody>
         </table>
+        <br>
+        {{ $tagvideos->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
 

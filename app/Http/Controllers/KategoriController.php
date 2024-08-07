@@ -9,7 +9,7 @@ class KategoriController extends Controller
 {
     //
     public function tampilKategoriBerita(){
-        $category = KategoriModel::paginate(10);
-        return view("administrator.modul-berita.kategoriberita", compact(['category']));
+        $categories = KategoriModel::paginate(10);
+        return view("administrator.modul-berita.kategoriberita", compact(['categories']));
     }
 }
