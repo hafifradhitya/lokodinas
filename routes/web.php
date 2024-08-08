@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\InteraksiController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MainController;
@@ -44,6 +45,8 @@ Route::get('administrator/modul-berita/tagberita', [AppController::class, "tagbe
 Route::get('administrator/modul-berita/tagberita', [beritaController::class, "tagberita"]);
 
 Route::get('administrator/modul-interaksi/agenda', [AppController::class, "agenda"]);
+Route::get('administrator/modul-interaksi/agenda', [InteraksiController::class, "tampilagenda"]);
+
 Route::get('administrator/modul-interaksi/alamatkontak', [AppController::class, "alamatkontak"]);
 Route::get('administrator/modul-interaksi/downloadarea', [AppController::class, "downloadarea"]);
 Route::get('administrator/modul-interaksi/jejakpendapat', [AppController::class, "jejakpendapat"]);

@@ -19,20 +19,30 @@
                     <th>Tgl Mulai</th>
                     <th>Tgl Selesai</th>
                     <th>Jam</th>
-                    <th>#</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                @php
+                $no=1;
+                @endphp
+                @foreach ($agendas as $agenda)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>Tiger Nixon</td>
-                    <td>Tiger Nixon</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $agenda->tema }}</td>
+                    <td>{{ $agenda->tgl_mulai }}</td>
+                    <td>{{ $agenda->tgl_selesai }}</td>
+                    <td>{{ $agenda->jam }}</td>
                     <td>--</td>
                 </tr>
+                @php
+                $no++;
+                @endphp
+                @endforeach
             </tbody>
         </table>
+        <br>
+        {{ $agendas->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
 

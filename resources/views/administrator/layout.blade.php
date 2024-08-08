@@ -41,7 +41,7 @@
             <li class="nav-item">
               <a class="nav-link active" href="{{ url('administrator/dashboard') }}">
                 <i class="ni ni-shop text-primary"></i>
-                <span class="nav-link-text">Dashboards</span>
+                <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
@@ -192,11 +192,9 @@
 
 
   <div class="main-content" id="panel">
-    <!-- Topnav -->
     <nav class="navbar navbar-top navbar-expand navbar-light bg-secondary border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Search form -->
           <form class="navbar-search navbar-search-dark form-inline mr-sm-3" id="navbar-search-main">
             <div class="form-group mb-0">
               <div class="input-group input-group-alternative input-group-merge">
@@ -210,10 +208,8 @@
               <span aria-hidden="true">×</span>
             </button>
           </form>
-          <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
-              <!-- Sidenav toggler -->
               <div class="pr-3 sidenav-toggler sidenav-toggler-light" data-action="sidenav-pin" data-target="#sidenav-main">
                 <div class="sidenav-toggler-inner">
                   <i class="sidenav-toggler-line"></i>
@@ -232,16 +228,13 @@
                 <i class="ni ni-bell-55"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
-                <!-- Dropdown header -->
                 <div class="px-3 py-3">
                   <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong> notifications.</h6>
                 </div>
-                <!-- List group -->
                 <div class="list-group list-group-flush">
                   <a href="#!" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <!-- Avatar -->
                         <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
@@ -260,7 +253,6 @@
                   <a href="#!" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <!-- Avatar -->
                         <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
@@ -279,7 +271,6 @@
                   <a href="#!" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <!-- Avatar -->
                         <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
@@ -298,7 +289,6 @@
                   <a href="#!" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <!-- Avatar -->
                         <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
@@ -317,7 +307,6 @@
                   <a href="#!" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <!-- Avatar -->
                         <img alt="Image placeholder" src="../../assets/img/theme/team-5.jpg" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
@@ -334,7 +323,6 @@
                     </div>
                   </a>
                 </div>
-                <!-- View all -->
                 <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
               </div>
             </li>
@@ -415,8 +403,6 @@
         </div>
       </div>
     </nav>
-    <!-- Header -->
-    <!-- Header -->
     <div class="header pb-6">
       <div class="container-fluid">
         <div class="header-body">
@@ -426,7 +412,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Alternative</li>
                 </ol>
               </nav>
@@ -435,20 +421,19 @@
         </div>
       </div>
     </div>
-    <!-- Page content -->
     <div class="container-fluid mt--6">
       @yield('content')
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-
-          </div>
-          <div class="col-lg-6">
-
+    </div>
+      @yield('footer')
+    <footer class="footer pt-0">
+      <div class="row align-items-center justify-content-lg-between">
+        <div class="col-lg-12">
+          <div class="copyright-text text-center">
+            <strong>Copyright &copy; 2016 - <?php echo date('Y'); ?> <a target='_BLANK' href="http://www.lokomedia.web.id"> Lokomedia.web.id</a>.</strong> All rights reserved.
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </div>
 
   <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -481,6 +466,7 @@
   <script src="{{ url('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
   <!-- Optional JS -->
   <script src="{{ url('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+  <script src="{{ url('assets/js/components/charts/chart-bar.js') }}"></script>
   <script src="{{ url('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
   <script src="{{ url('assets/vendor/jvectormap-next/jquery-jvectormap.min.js') }}"></script>
   <script src="{{ url('assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
