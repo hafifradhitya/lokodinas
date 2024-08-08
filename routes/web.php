@@ -48,10 +48,15 @@ Route::get('administrator/modul-interaksi/agenda', [AppController::class, "agend
 Route::get('administrator/modul-interaksi/agenda', [InteraksiController::class, "tampilagenda"]);
 
 Route::get('administrator/modul-interaksi/alamatkontak', [AppController::class, "alamatkontak"]);
+
 Route::get('administrator/modul-interaksi/downloadarea', [AppController::class, "downloadarea"]);
+Route::get('administrator/modul-interaksi/downloadarea', [InteraksiController::class, "tampildownload"]);
+
 Route::get('administrator/modul-interaksi/jejakpendapat', [AppController::class, "jejakpendapat"]);
 Route::get('administrator/modul-interaksi/pesanmasuk', [AppController::class, "pesanmasuk"]);
+
 Route::get('administrator/modul-interaksi/sekilasinfo', [AppController::class, "sekilasinfo"]);
+Route::get('administrator/modul-interaksi/sekilasinfo', [interaksiController::class, "tampilinfo"]);
 
 Route::get('administrator/modul-users/manajemenuser', [AppController::class, "manajemenuser"]);
 Route::get('administrator/modul-users/manajemenmodul', [AppController::class, "manajemenmodul"]);

@@ -34,7 +34,7 @@
                     <tr>
                         <td>{{ $no }}</td>
                         <td>{{ $new->judul }}</td>
-                        <td>{{ $new->tanggal }}</td>
+                        <td>{{ \Carbon\Carbon::parse($new->tanggal)->format('d M Y') }}</td>
                         <td>{{ $new->status }}</td>
                         <td>
                             <a href="{{ url('data/'.$new->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>

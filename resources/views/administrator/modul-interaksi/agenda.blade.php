@@ -30,10 +30,17 @@
                 <tr>
                     <td>{{ $no }}</td>
                     <td>{{ $agenda->tema }}</td>
-                    <td>{{ $agenda->tgl_mulai }}</td>
-                    <td>{{ $agenda->tgl_selesai }}</td>
+                    <td>{{ \Carbon\Carbon::parse($agenda->tgl_mulai)->format('d M Y') }}</td>
+                    <td>{{ \Carbon\Carbon::parse($agenda->tgl_selesai)->format('d M Y') }}</td>
                     <td>{{ $agenda->jam }}</td>
-                    <td>--</td>
+                    <td>
+                        <a href="{{ url('data/'.$agenda->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                            Edit
+                        </a>
+                        <a href="{{ url('data/'.$agenda->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $agenda-> tema }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                            Hapus
+                        </a>
+                    </td>
                 </tr>
                 @php
                 $no++;
