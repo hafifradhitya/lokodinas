@@ -29,7 +29,7 @@ class InteraksiController extends Controller
     }
 
     public function tampilpoling(){
-        $polings = JajakModel::orderBy('id_download', 'desc')->paginate(6);
+        $polings = JajakModel::orderBy('id_poling', 'desc')->paginate(6);
         return view("administrator.modul-interaksi.jejakpendapat", compact(['polings']));
     }
 

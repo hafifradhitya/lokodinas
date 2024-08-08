@@ -39,6 +39,10 @@
                         </a>
                     </td>
                 </tr>
+                @php
+                    $no++;
+                @endphp
+                @endforeach
             </tbody>
         </table>
         <br>

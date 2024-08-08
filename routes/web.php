@@ -53,12 +53,17 @@ Route::get('administrator/modul-interaksi/downloadarea', [AppController::class, 
 Route::get('administrator/modul-interaksi/downloadarea', [InteraksiController::class, "tampildownload"]);
 
 Route::get('administrator/modul-interaksi/jejakpendapat', [AppController::class, "jejakpendapat"]);
+Route::get('administrator/modul-interaksi/jejakpendapat', [interaksiController::class, "tampilpoling"]);
+
 Route::get('administrator/modul-interaksi/pesanmasuk', [AppController::class, "pesanmasuk"]);
+Route::get('administrator/modul-interaksi/pesanmasuk', [interaksiController::class, "tampilpesan"]);
 
 Route::get('administrator/modul-interaksi/sekilasinfo', [AppController::class, "sekilasinfo"]);
 Route::get('administrator/modul-interaksi/sekilasinfo', [interaksiController::class, "tampilinfo"]);
 
 Route::get('administrator/modul-users/manajemenuser', [AppController::class, "manajemenuser"]);
+Route::get('administrator/modul-users/manajemenuser', [interaksiController::class, "tampiluser"]);
+
 Route::get('administrator/modul-users/manajemenmodul', [AppController::class, "manajemenmodul"]);
 
 Route::get('administrator/modul-video/playlistvideo', [AppController::class, "playlistvideo"]);

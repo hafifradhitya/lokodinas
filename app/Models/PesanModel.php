@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PesanModel extends Model
 {
     use HasFactory;
-    protected $table = 'hubungan';
+    protected $table = 'hubungi';
     protected $fillable = ['nama','email','subjek','tanggal'];
 }
