@@ -6,9 +6,6 @@
     <!-- Card header -->
     <div class="card-header">
         <h3 class="mb-0">Manajemen Users</h3>
-        {{-- <p class="text-sm mb-0">
-            This is an exmaple of datatable using the well known datatables.net plugin. This is a minimal setup in order to get started fast.
-        </p> --}}
     </div>
     <div class="table-responsive py-4">
         <table class="table table-flush" id="datatable-basic">
@@ -21,22 +18,42 @@
                     <th>Foto</th>
                     <th>Blokir</th>
                     <th>Level</th>
-                    <th>#</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                @php
+                $no=1;
+                @endphp
+                @foreach ($users as $user)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>Tiger Nixon</td>
-                    <td>Tiger Nixon</td>
-                    <td>Edinburgh</td>
-                    <td>Edinburgh</td>
-                    <td>--</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $user->username }}</td>
+                    <td>{{ $user->nama_lengkap }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>
+                        <?php
+                        if ($user->lokomedia != NULL) {
+                            $lokomedia = $user->lokomedia;
+                        }
+                        ?>
+                        <img style='width:32px; height:32px' src="{{ url('foto_user/'.$user->lokomedia )}}">
+                    </td>
+                    <td>{{ $user->blokir }}</td>
+                    <td>{{ $user->level }}</td>
+                    <td>
+                        <a href="{{ url('data/'.$user->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                            Edit
+                        </a>
+                        <a href="{{ url('data/'.$user->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $user-> username }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                            Hapus
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <br>
+        {{ $users->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
 

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserModel;
+use App\MOdels\PesanModel;
+use App\Models\JajakModel;
 use App\Models\DownloadModel;
 use App\Models\InfoModel;
 use App\Models\AgendaModel;
@@ -23,5 +26,20 @@ class InteraksiController extends Controller
     public function tampildownload(){
         $downloads = DownloadModel::orderBy('id_download', 'desc')->paginate(9);
         return view("administrator.modul-interaksi.downloadarea", compact(['downloads']));
+    }
+
+    public function tampilpoling(){
+        $polings = JajakModel::orderBy('id_download', 'desc')->paginate(6);
+        return view("administrator.modul-interaksi.jejakpendapat", compact(['polings']));
+    }
+
+    public function tampilpesan(){
+        $messages = PesanModel::orderBy('id_hubungi', 'desc')->paginate(3);
+        return view("administrator.modul-interaksi.pesanmasuk", compact(['messages']));
+    }
+
+    public function tampiluser(){
+        $users = UserModel::orderBy('username', 'desc')->paginate(1);
+        return view("administrator.modul-users.manajemenuser", compact(['users']));
     }
 }

@@ -6,9 +6,6 @@
     <!-- Card header -->
     <div class="card-header">
         <h3 class="mb-0">Polling / Jajak Pendapat</h3>
-        {{-- <p class="text-sm mb-0">
-            This is an exmaple of datatable using the well known datatables.net plugin. This is a minimal setup in order to get started fast.
-        </p> --}}
     </div>
     <div class="table-responsive py-4">
         <table class="table table-flush" id="datatable-basic">
@@ -19,20 +16,33 @@
                     <th>Status</th>
                     <th>Rating</th>
                     <th>Aktif</th>
-                    <th>#</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                @php
+                $no=1;
+                @endphp
+                @foreach ( $polings as $poling )
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>Tiger Nixon</td>
-                    <td>Tiger Nixon</td>
-                    <td>--</td>
+                    <td>{{ $no }}</td>
+                    <td>{{ $poling->pilihan }}</td>
+                    <td>{{ $poling->status }}</td>
+                    <td>{{ $poling->rating }}</td>
+                    <td>{{ $poling->aktif }}</td>
+                    <td>
+                        <a href="{{ url('data/'.$poling->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                            Edit
+                        </a>
+                        <a href="{{ url('data/'.$poling->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $poling-> pilihan }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                            Hapus
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <br>
+        {{ $polings->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
 
