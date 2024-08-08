@@ -422,8 +422,14 @@
       </div>
     </div>
     <div class="container-fluid mt--6">
-      @yield('content')
+        @if(session()->has('pesan'))
+        <div class="alert alert-info">
+            {{ session('pesan') }}
+        </div>
+        @endif
+        @yield('content')
     </div>
+
       @yield('footer')
     <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
@@ -436,6 +442,7 @@
     </footer>
   </div>
 
+  @yield('script')
   <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ url('assets/vendor/js-cookie/js.cookie.js') }}"></script>
   <script src="{{ url('assets/js/argon.js') }}"></script>

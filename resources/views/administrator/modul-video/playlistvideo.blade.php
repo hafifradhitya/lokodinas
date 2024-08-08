@@ -4,11 +4,9 @@
 
 <div class="card">
     <!-- Card header -->
-    <div class="card-header">
+    <div class="card-header d-flex justify-content-between align-items-center">
         <h3 class="mb-0">Playlist Video</h3>
-        {{-- <p class="text-sm mb-0">
-            This is an exmaple of datatable using the well known datatables.net plugin. This is a minimal setup in order to get started fast.
-        </p> --}}
+        <button type="button" class="btn btn-primary btn-sm">Tambahkan Data</button>
     </div>
     <div class="table-responsive py-4">
         <table class="table table-bordered" id="datatable-basic">
@@ -52,9 +50,9 @@
                 @endphp
                 @endforeach
             </tbody>
-            {{ $playlists->links('vendor.pagination.bootstrap-4') }}
         </table>
+        <br>
+        {{ $playlists->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
-
 @endsection
