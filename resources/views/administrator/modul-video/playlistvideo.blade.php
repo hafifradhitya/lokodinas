@@ -6,7 +6,7 @@
     <!-- Card header -->
     <div class="card-header d-flex justify-content-between align-items-center">
         <h3 class="mb-0">Playlist Video</h3>
-        <button type="button" class="btn btn-primary btn-sm">Tambahkan Data</button>
+        <a href="{{ url("administrator/modul-video/tambahplaylistvideo") }}" class="btn btn-primary btn-sm">Tambahkan Data</a>
     </div>
     <div class="table-responsive py-4">
         <table class="table table-bordered" id="datatable-basic">
@@ -37,11 +37,11 @@
                     <td>{{ $playlist->jdl_playlist }}</td>
                     <td>{{ $playlist->aktif }}</td>
                     <td>
-                        <a href="{{ url('data/'.$playlist->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                        <a href="{{ url('administrator/modul-video/playlistvideo'.$playlist->id_playlist.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
                           Edit
                         </a>
-                        <a href="{{ url('data/'.$playlist->id.'/hapus') }}" onclick="return confirm('yakin hapus {{ $playlist-> name }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
-                          Hapus
+                        <a href="{{ url('administrator/modul-video/playlistvideo/'.$playlist->id_playlist.'/hapus') }}" onclick="return confirm('yakin hapus {{ $playlist->jdl_playlist }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>
+                            Hapus
                         </a>
                     </td>
                 </tr>
