@@ -62,7 +62,9 @@ Route::get('administrator/modul-interaksi/pesanmasuk', [interaksiController::cla
 
 Route::get('administrator/modul-interaksi/sekilasinfo', [AppController::class, "sekilasinfo"]);
 Route::get('administrator/modul-interaksi/tambahsekilasinfo', [AppController::class, "tambahSekilasinfo"]);
-Route::post('proses-tambah-info', [InteraksiController::class, "tampilInfo"]);
+Route::get('administrator/modul-interaksi/editsekilasinfo/{id}/edit', [AppController::class, "editSekilasinfo"]);
+Route::get('administrator/modul-interaksi/editsekilasinfo/{id}/hapus', [InteraksiController::class, "hapusinfo"]);
+Route::post('proses-tambah-info', [InteraksiController::class, "tambahinfo"]);
 Route::get('administrator/modul-interaksi/sekilasinfo', [interaksiController::class, "tampilinfo"]);
 
 Route::get('administrator/modul-users/manajemenuser', [AppController::class, "manajemenuser"]);
@@ -76,7 +78,7 @@ Route::get('administrator/modul-video/playlistvideo', [PlaylistController::class
 Route::get('administrator/modul-video/Action/tambahplaylistvideo', [PlaylistController::class, "tampilTambahplaylist"]);
 Route::post("proses-tambah-playlist", [PlaylistController::class, "tambahPlaylist"]);
 Route::get("administrator/modul-video/Action/editplaylistvideo/{id}/edit", [PlaylistController::class, "tampilEditplaylist"]);
-Route::post("proses-edit-playlist", [PlaylistController::class, "editPlaylist"]);
+Route::post("proses-edit-playlist/{id_playlist}", [PlaylistController::class, "editPlaylist"]);
 
 Route::get("administrator/modul-video/playlistvideo/{id}/hapus", [PlaylistController::class, "hapusPlaylist"]);
 

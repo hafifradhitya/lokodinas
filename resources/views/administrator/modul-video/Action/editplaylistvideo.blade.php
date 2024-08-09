@@ -5,10 +5,9 @@
         <div class="card-body">
             <form action="{{ url('proses-edit-playlist', $playlist->id_playlist) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                {{-- @METHOD('PUT') --}}
                 <div class="form-group">
-                    <label class="form-control-label" for="cover">Cover</label>
-                    <input type="file" class="form-control" id="cover" name="cover" accept="image/*">
+                    <label class="form-control-label" for="gbr_playlist">Cover</label>
+                    <input type="file" class="form-control" id="gbr_playlist" name="gbr_playlist" accept="image/*">
                     <small class="form-text text-muted">Biarkan kosong jika tidak ingin mengubah cover.</small>
                 </div>
                 <div class="form-group">

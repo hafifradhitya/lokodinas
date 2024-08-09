@@ -63,21 +63,28 @@ class PlaylistController extends Controller
             // Tangani kasus ketika $playlist adalah null
             return redirect()->back()->with('error', 'Playlist tidak ditemukan');
         }
-        $playlist->playlist_seo = $request->playlist_seo;
+        // $playlist->playlist_seo = $request->playlist_seo;
         $playlist->aktif = $request->aktif;
-        $playlist->username = $request->username;
+        // $playlist->username = $request->username;
 
-        if($request->hasFile("cover")){
-            $cover = $request->file("cover");
-            $gbr_playlistName = $jdl_playlist."_".Str::random(25).".".$cover->getClientOriginalExtension();
-            $cover->move("./covers/",$gbr_playlistName);
+        // if($request->hasFile("cover")){
+        //     $gbr_playlist = $request->file("cover");
+        //     $gbr_playlistName = $jdl_playlist."_".Str::random(25).".".$gbr_playlist->getClientOriginalExtension();
+        //     $gbr_playlist->move("./img_playlist/",$gbr_playlistName);
 
-            $playlist->cover = $gbr_playlistName;
+        //     $playlist->gbr_playlist = $gbr_playlistName;
+        // }
+
+        if ($request->hasFile('cover')) {
+            $file = $request->file('cover');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('img_playlist'), $filename);
+            $playlist->gbr_playlist = $filename;
         }
 
         $playlist->save();
 
-        return redirect("administrator/modul-video/Action/editplaylistvideo/".$request->id."/edit")->with('success', 'Playlist berhasil diperbarui');
+        return redirect("administrator/modul-video/playlistvideo/")->with('success', 'Playlist berhasil diperbarui');
     }
 
 

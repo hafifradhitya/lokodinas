@@ -442,7 +442,7 @@
     </footer>
   </div>
 
-  @yield('script')
+  {{-- @yield('script') --}}
   <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
   <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ url('assets/vendor/js-cookie/js.cookie.js') }}"></script>
@@ -476,15 +476,15 @@
   <script src="{{ url('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
   <script src="{{ url('assets/js/components/charts/chart-bar.js') }}"></script>
   <script src="{{ url('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
-  <script src="{{ url('assets/vendor/jvectormap-next/jquery-jvectormap.min.js') }}"></script>
-  <script src="{{ url('assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
+  <script src="{{ url('assets/vendor/jvectormap-next/jquery-jvectormap.min.js') }}"></script> --}}
+  {{-- <script src="{{ url('assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
   <!-- Argon JS -->
   <script src="{{ url('assets/js/argon.js?v=1.1.0') }}"></script>
   <!-- Demo JS - remove this in your project -->
-  <script src="{{ url('assets/js/demo.min.js') }}"></script>
-  <script>
+  {{-- <script src="{{ url('assets/js/demo.min.js') }}"></script> --}}
+  {{-- <script>
   CKEDITOR.replace('isi_halaman');
-</script>
+</script> --}}
 </body>
 
 </html>
