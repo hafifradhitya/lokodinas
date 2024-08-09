@@ -102,4 +102,8 @@ class AppController extends Controller
     public function templatewebsite(){
         return view('administrator.modul-web.templatewebsite');
     }
+
+    public function tambahsekilasinfo(){
+        return view('administrator.modul-interaksi.tambahsekilasinfo');
+    }
 }
