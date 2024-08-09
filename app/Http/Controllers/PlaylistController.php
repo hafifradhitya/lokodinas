@@ -18,7 +18,7 @@ class PlaylistController extends Controller
 
     public function tampilTambahplaylist()
     {
-        return view('administrator.modul-video.tambahplaylistvideo');
+        return view('administrator.modul-video.Action.tambahplaylistvideo');
     }
 
     public function tambahPlaylist(Request $request)
@@ -49,7 +49,7 @@ class PlaylistController extends Controller
     public function tampilEditplaylist($id_playlist)
     {
         $playlist = PlaylistModel::where('id_playlist', $id_playlist)->firstOrFail();
-        return view('administrator.modul-video.editplaylistvideo', compact('playlist'));
+        return view('administrator.modul-video.Action.editplaylistvideo', compact('playlist'));
     }
 
     public function editPlaylist(Request $request)
@@ -77,7 +77,7 @@ class PlaylistController extends Controller
 
         $playlist->save();
 
-        return redirect('administrator/modul-video/playlistvideo')->with('success', 'Playlist berhasil diperbarui');
+        return redirect("administrator/modul-video/Action/editplaylistvideo/".$request->id."/edit")->with('success', 'Playlist berhasil diperbarui');
     }
 
 

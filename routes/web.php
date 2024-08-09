@@ -22,6 +22,7 @@ Route::get('administrator/menu-utama/menuwebsite', [AppController::class, "menuw
 Route::get("administrator/menu-utama/menuwebsite", [MainController::class,"tampilMenuWebsite"]);
 
 Route::get('administrator/menu-utama/halamanbaru', [AppController::class, "halamanbaru"]);
+Route::get('administrator/menu-utama/Action/tambahhalamanbaru', [AppController::class, "tambahhalamanbaru"]);
 Route::get("administrator/menu-utama/halamanbaru", [MainController::class,"tampilHalaman"]);
 
 Route::get('administrator/menu-utama/identitaswebsite', [AppController::class, "identitaswebsite"]);
@@ -69,19 +70,15 @@ Route::get('administrator/modul-users/manajemenuser', [interaksiController::clas
 
 Route::get('administrator/modul-users/manajemenmodul', [AppController::class, "manajemenmodul"]);
 
-Route::get('administrator/modul-video/playlistvideo', [AppController::class, "playlistvideo"]);
-Route::get("administrator/modul-video/playlistvideo", [PlaylistController::class,"tampilPlaylist"]);
+Route::get("administrator/modul-video/playlistvideo", [AppController::class, "playlistvideo"]);
+Route::get('administrator/modul-video/playlistvideo', [PlaylistController::class, "tampilPlaylist"]);
 
-Route::get("administrator/modul-video/tambahplaylistvideo", [PlaylistController::class, "tampilTambahplaylist"]);
+Route::get('administrator/modul-video/Action/tambahplaylistvideo', [PlaylistController::class, "tampilTambahplaylist"]);
 Route::post("proses-tambah-playlist", [PlaylistController::class, "tambahPlaylist"]);
-
-Route::get("administrator/modul-video/editplaylistvideo/{id}/edit", [PlaylistController::class, "tampilEditplaylist"]);
+Route::get("administrator/modul-video/Action/editplaylistvideo/{id}/edit", [PlaylistController::class, "tampilEditplaylist"]);
 Route::post("proses-edit-playlist", [PlaylistController::class, "editPlaylist"]);
 
-
-
 Route::get("administrator/modul-video/playlistvideo/{id}/hapus", [PlaylistController::class, "hapusPlaylist"]);
-
 
 Route::get('administrator/modul-video/tagvideo', [AppController::class, "tagvideo"]);
 Route::get("administrator/modul-video/tagvideo", [VideoController::class,"tampilTagVideo"]);
@@ -94,6 +91,3 @@ Route::get('administrator/modul-web/logowebsite', [AppController::class, "logowe
 
 Route::get('administrator/modul-web/templatewebsite', [AppController::class, "templatewebsite"]);
 Route::get('administrator/modul-web/templatewebsite', [WebController::class, "tampiltemplate"]);
-
-
-
