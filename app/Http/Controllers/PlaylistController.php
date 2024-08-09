@@ -46,37 +46,40 @@ class PlaylistController extends Controller
 
         return redirect('administrator/modul-video/playlistvideo')->with('success', 'Playlist berhasil ditambahkan');
     }
-
-    public function editPlaylist($id)
+    public function tampilEditplaylist($id_playlist)
     {
-        $playlist = PlaylistModel::findOrFail($id);
+        $playlist = PlaylistModel::where('id_playlist', $id_playlist)->firstOrFail();
         return view('administrator.modul-video.editplaylistvideo', compact('playlist'));
     }
 
-    public function updatePlaylist(Request $request, $id)
+    public function editPlaylist(Request $request)
     {
-        $validatedData = $request->validate([
-            'cover' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'jdl_playlist' => 'required|string|max:255',
-            'aktif' => 'required|in:Y,N',
-        ]);
+        $playlist = PlaylistModel::find($request->id_playlist);
+        $jdl_playlist = $request->jdl_playlist;
 
-        $playlist = PlaylistModel::findOrFail($id);
-        $playlist->jdl_playlist = $validatedData['jdl_playlist'];
-        $playlist->playlist_seo = Str::slug($validatedData['jdl_playlist']); // Tambahkan ini untuk mengupdate playlist_seo
-        $playlist->aktif = $validatedData['aktif'];
+        if ($playlist) {
+            $playlist->jdl_playlist = $jdl_playlist;
+        } else {
+            // Tangani kasus ketika $playlist adalah null
+            return redirect()->back()->with('error', 'Playlist tidak ditemukan');
+        }
+        $playlist->playlist_seo = $request->playlist_seo;
+        $playlist->aktif = $request->aktif;
+        $playlist->username = $request->username;
 
-        if ($request->hasFile('cover')) {
-            $file = $request->file('cover');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('img_playlist'), $filename);
-            $playlist->gbr_playlist = $filename;
+        if($request->hasFile("cover")){
+            $cover = $request->file("cover");
+            $gbr_playlistName = $jdl_playlist."_".Str::random(25).".".$cover->getClientOriginalExtension();
+            $cover->move("./covers/",$gbr_playlistName);
+
+            $playlist->cover = $gbr_playlistName;
         }
 
         $playlist->save();
 
         return redirect('administrator/modul-video/playlistvideo')->with('success', 'Playlist berhasil diperbarui');
     }
+
 
     public function hapusPlaylist($id_playlist)
     {

@@ -37,7 +37,7 @@
                     <td>{{ $playlist->jdl_playlist }}</td>
                     <td>{{ $playlist->aktif }}</td>
                     <td>
-                        <a href="{{ url('administrator/modul-video/playlistvideo'.$playlist->id_playlist.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
+                        <a href="{{ url('administrator/modul-video/editplaylistvideo/'.$playlist->id_playlist.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
                           Edit
                         </a>
                         <a href="{{ url('administrator/modul-video/playlistvideo/'.$playlist->id_playlist.'/hapus') }}" onclick="return confirm('yakin hapus {{ $playlist->jdl_playlist }}?')" class="btn btn-danger btn-sm"><span class='glyphicon glyphicon-remove'></span>

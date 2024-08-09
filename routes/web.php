@@ -9,6 +9,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -59,6 +60,8 @@ Route::get('administrator/modul-interaksi/pesanmasuk', [AppController::class, "p
 Route::get('administrator/modul-interaksi/pesanmasuk', [interaksiController::class, "tampilpesan"]);
 
 Route::get('administrator/modul-interaksi/sekilasinfo', [AppController::class, "sekilasinfo"]);
+Route::get('administrator/modul-interaksi/tambahsekilasinfo', [AppController::class, "tambahSekilasinfo"]);
+Route::post('proses-tambah-info', [InteraksiController::class, "tampilInfo"]);
 Route::get('administrator/modul-interaksi/sekilasinfo', [interaksiController::class, "tampilinfo"]);
 
 Route::get('administrator/modul-users/manajemenuser', [AppController::class, "manajemenuser"]);
@@ -71,6 +74,12 @@ Route::get("administrator/modul-video/playlistvideo", [PlaylistController::class
 
 Route::get("administrator/modul-video/tambahplaylistvideo", [PlaylistController::class, "tampilTambahplaylist"]);
 Route::post("proses-tambah-playlist", [PlaylistController::class, "tambahPlaylist"]);
+
+Route::get("administrator/modul-video/editplaylistvideo/{id}/edit", [PlaylistController::class, "tampilEditplaylist"]);
+Route::post("proses-edit-playlist", [PlaylistController::class, "editPlaylist"]);
+
+
+
 Route::get("administrator/modul-video/playlistvideo/{id}/hapus", [PlaylistController::class, "hapusPlaylist"]);
 
 
@@ -82,7 +91,9 @@ Route::get("administrator/modul-video/video", [VideoController::class,"tampilVid
 
 Route::get('administrator/modul-web/backgroundwebsite', [AppController::class, "backgroundwebsite"]);
 Route::get('administrator/modul-web/logowebsite', [AppController::class, "logowebsite"]);
+
 Route::get('administrator/modul-web/templatewebsite', [AppController::class, "templatewebsite"]);
+Route::get('administrator/modul-web/templatewebsite', [WebController::class, "tampiltemplate"]);
 
 
 

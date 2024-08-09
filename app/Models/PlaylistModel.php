@@ -19,5 +19,5 @@ class PlaylistModel extends Model
 
     public function video(){
         return $this->hasMany(VideoController::class,"id_playlist","id");
-    }
+    }   
 }
