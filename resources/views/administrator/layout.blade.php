@@ -443,6 +443,7 @@
   </div>
 
   @yield('script')
+  <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
   <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ url('assets/vendor/js-cookie/js.cookie.js') }}"></script>
   <script src="{{ url('assets/js/argon.js') }}"></script>
@@ -464,7 +465,7 @@
   <script src="{{ url('assets/vendor/datatables.net-select/js/dataTables.select.min.js') }}"></script>
 
 
-  {{-- <!-- Argon Scripts -->
+ <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
@@ -480,7 +481,10 @@
   <!-- Argon JS -->
   <script src="{{ url('assets/js/argon.js?v=1.1.0') }}"></script>
   <!-- Demo JS - remove this in your project -->
-  <script src="{{ url('assets/js/demo.min.js') }}"></script> --}}
+  <script src="{{ url('assets/js/demo.min.js') }}"></script>
+  <script>
+  CKEDITOR.replace('isi_halaman');
+</script>
 </body>
 
 </html>

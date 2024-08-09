@@ -22,7 +22,7 @@
                 </div>
                 <small class="form-text text-muted">Tidak ada berkas dipilih.</small>
             </div>
-            <button type="submit" class="submit btn btn-primary">Tambahkan</button>
+            <button type="submit" class="btn btn-primary">Tambahkan</button>
             <a href="{{ url('administrator/modul-interaksi/sekilasinfo') }}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>

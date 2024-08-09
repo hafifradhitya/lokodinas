@@ -106,4 +106,8 @@ class AppController extends Controller
     public function tambahsekilasinfo(){
         return view('administrator.modul-interaksi.tambahsekilasinfo');
     }
+
+    public function tambahhalamanbaru(){
+        return view('administrator.menu-utama.action.tambahhalamanbaru');
+    }
 }

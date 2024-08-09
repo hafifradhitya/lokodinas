@@ -27,29 +27,29 @@ class InteraksiController extends Controller
     }
     
     public function tambahInfo(Request $request)
-    {
-        // Validasi input
-        $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'info' => 'required|string',
-            'aktif' => 'required|boolean',
-        ]);
-    
-        // Proses upload gambar
-        $gambar = $request->file('gambar');
-        $gambarName = 'info_' . Str::random(25) . '.' . $gambar->getClientOriginalExtension();
-        $gambar->move(public_path('pictures'), $gambarName);
-    
-        // Buat record baru
-        InfoModel::create([
-            'gambar' => $gambarName,
-            'info' => $request->info,
-            'aktif' => $request->aktif,
-            'tgl_posting' => now(),
-        ]);
-    
-        return redirect()->route('info.index')->with('success', 'Info berhasil ditambahkan');
+{
+    $request->validate([
+        'info' => 'required|string',
+        'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'aktif' => 'required|in:Y,N',
+    ]);
+
+    $sekilasInfo = new InfoModel();
+    $sekilasInfo->info = $request->info;
+    $sekilasInfo->aktif = $request->aktif;
+    $sekilasInfo->tgl_posting = now();
+
+    if ($request->hasFile('cover')) {
+        $file = $request->file('cover');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->move(public_path('img_playlist'), $filename);
+        $sekilasInfo->gambar = $filename;
     }
+
+    $sekilasInfo->save();
+
+    return redirect('administrator.modul-interaksi.sekilasinfo')->with('success', 'Info berhasil ditambahkan');
+}
 
     public function tampildownload()
     {

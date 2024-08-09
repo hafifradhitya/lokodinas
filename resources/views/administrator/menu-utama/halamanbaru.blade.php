@@ -7,9 +7,9 @@
   <div class="row">
     <div class="col">
       <div class="card">
-        <!-- Card header -->
-        <div class="card-header">
-          <h3 class="mb-0">Halaman baru</h3>
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h3 class="mb-0">Halaman Baru</h3>
+          <a href="{{ url('administrator/menu-utama/action/tambahhalamanbaru')}}" class="btn btn-primary btn-sm">Tambah Data</a>
         </div>
         <div class="table-responsive  py-4">
           <table class="table table-bordered" id="datatable-basic">
@@ -30,7 +30,7 @@
               <tr>
                 <td>{{ $no }}</td>
                 <td>{{ $page->judul }}</td>
-                <td><a href="{{ $page->isi_halaman }}">{{ $page->judul }}</a></td>
+                <td><a href="{{ $page->isi_halaman }}">halaman/detail/{{ $page->judul }}</a></td>
                 <td>{{ \Carbon\Carbon::parse($page->tgl_posting)->format('d M Y') }}</td>
                 <td>
                   <a href="{{ url('data/'.$page->id.'/edit') }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span>
